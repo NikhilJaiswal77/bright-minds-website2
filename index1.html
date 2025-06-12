@@ -69,6 +69,30 @@
       text-decoration: none;
       border-radius: 6px;
     }
+    @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .qr-box, .form-box {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  iframe {
+    height: 600px;
+  }
+
+  form input, form button, .qr-box a button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -117,7 +141,8 @@
       return;
     }
 
-    const upiLink = upi://pay?pa=nikhiljaiswal575-1@oksbi&pn=Nikhil%20Jaiswal&am=${amount}&cu=INR;
+    const upiLink = `upi://pay?pa=nikhiljaiswal575-1@oksbi&pn=Nikhil%20Jaiswal&am=${amount}&cu=INR`;
+
     window.location.href = upiLink;
   }
 </script>
