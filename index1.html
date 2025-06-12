@@ -135,19 +135,23 @@
 
 <script>
   function payViaUPI() {
-    const amount = document.getElementById("amount").value.trim();
-    if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
-      alert("Please enter a valid amount.");
-      return;
-    }
-
-    const upiID = "nikhiljaiswal595-1@ybl";
-    const payeeName = "Nikhil Jaiswal";
-    const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
-
-    // Redirect to UPI app
-    window.location.href = upiUrl;
+  const amount = document.getElementById("amount").value.trim();
+  if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+    alert("Please enter a valid amount.");
+    return;
   }
+
+  const upiID = "nikhiljaiswal575-1@oksbi"; // corrected ID
+  const payeeName = "Nikhil Jaiswal";
+  const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+
+  // Show confirmation message
+  document.getElementById("confirmation").style.display = "block";
+
+  // Redirect to UPI app
+  window.location.href = upiUrl;
+}
+
 </script>
 <p id="confirmation" style="color: green; font-weight: bold; display: none;">
   If you have completed the payment, thank you! Please fill out the Google Form below to confirm your admission.
