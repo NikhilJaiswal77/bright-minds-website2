@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admission & Payment - Bright Minds Academy</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+    .qr-box, .form-box {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+    .qr-box img {
+      width: 250px;
+      margin-bottom: 1rem;
+      border: 2px solid #003366;
+      border-radius: 8px;
+    }
+    .qr-box p {
+      font-size: 1rem;
+      color: #333;
+    }
+    form label {
+      display: block;
+      margin: 0.5rem 0 0.25rem;
+      text-align: left;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button, .qr-box a button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 10px;
+    }
+    a.back-home {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admission & Payment</h1>
+
+  <!-- QR Code Section -->
+  <div class="qr-box">
+    <img src="brightminds_upi_qr2.png.jpg" alt="Payment QR Code">
+    <p><strong>Payee:</strong> Nikhil Jaiswal</p>
+    <p><strong>UPI ID:</strong> <code>nikhiljaiswal575-1@oksbi</code></p>
+    <p><strong>Note:</strong> Please mention student name and month in the remarks while paying.</p>
+  </div>
+
+  <!-- UPI Payment with Custom Amount -->
+<div class="qr-box">
+  <h2 style="color: #003366;">Pay via UPI</h2>
+
+  <label for="amount" style="display: block; text-align: left; margin: 1rem 0 0.25rem; font-weight: 500;">
+    Enter Amount (₹):
+  </label>
+  <input 
+    type="number" 
+    id="amount" 
+    placeholder="e.g., 500" 
+    min="1" 
+    required 
+    style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+
+  <button 
+    type="button" 
+    onclick="payViaUPI()" 
+    style="background-color: #003366; color: white; border: none; padding: 0.7rem 1.5rem; font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">
+    Pay via UPI
+  </button>
+
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+    Ensure a UPI app (PhonePe, Google Pay, Paytm) is installed on your phone.
+  </p>
+</div>
+
+<script>
+  function payViaUPI() {
+    const amount = document.getElementById("amount").value.trim();
+    if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+      alert("Please enter a valid amount.");
+      return;
+    }
+
+    const upiLink = `upi://pay?pa=nikhiljaiswal575-1@oksbi&pn=Nikhil%20Jaiswal&am=${amount}&cu=INR`;
+    window.location.href = upiLink;
+  }
+</script>
+
+
+  <!-- Google Form Embed -->
+  <div class="form-box">
+    <h2>Fill via Google Form</h2>
+   <iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLSe_xMtOyGOmtiVppnmagZKey4PJHOX3CHhk3S3D48dGzfGGew/viewform?embedded=true" 
+  width="100%" 
+  height="800" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0">
+  Loading…
+</iframe>
+
+  </div>
+
+  <a href="index.html" class="back-home">← Back to Home</a>
+</body>
+</html>

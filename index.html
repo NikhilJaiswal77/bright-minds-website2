@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Minds Academy</title>
+  <link rel="stylesheet" href="style.css">
+  
+    
+</head>
+<body>
+  <header>
+  <img src="demologo.png" alt="Bright Minds Academy Logo" style="height: 80px; float: right; margin-left: 20px;">
+  <h1>Bright Minds Academy</h1>
+  <p>Guiding Bright Minds to Great Heights</p>
+</header>
+
+
+  <div class="section highlight">
+    <h2>Classes 6 to 10 – Math & Science</h2>
+    <p><strong>Location:</strong> Ram Gulam Tola, Deoria, Uttar Pradesh</p>
+    <p><strong>Contact:</strong> <a href="tel:9598781490">9598781490</a> | 
+  <a href="tel:9532044392">9532044392</a></p>
+    <div style="margin-top: 1rem;">
+  <a href="https://wa.me/919598781490?text=Hello%20Bright%20Minds%20Academy%2C%20I%20want%20to%20know%20more%20about%20classes." 
+     target="_blank" 
+     style="background-color: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+    📱 Chat on WhatsApp
+  </a>
+</div>
+
+    <p><strong>Demo Classes Start:</strong> 1st July</p>
+  </div>
+
+  <div class="section">
+    <h2>Why Choose Us?</h2>
+    <div class="section mission-section">
+  <h2>🎯 Our Mission</h2>
+  <p>
+    At <strong>Bright Minds Academy</strong>, we aim to empower young minds by developing 
+    strong fundamentals, nurturing curiosity, and guiding them toward academic success. 
+    Our mission is to create confident, self-driven learners who thrive in both academics and life.
+  </p>
+</div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Experienced Faculty</h3>
+        <p>Qualified teachers dedicated to improving academic performance.</p>
+      </div>
+      <div class="feature">
+        <h3>Small Batch Size</h3>
+        <p>Personal attention to every student to ensure conceptual clarity.</p>
+      </div>
+      <div class="feature">
+        <h3>Result-Oriented Teaching</h3>
+        <p>Focus on scoring well in exams with strong fundamentals.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Class Timetable</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Class 6</th>
+          <th>Class 7</th>
+          <th>Class 8</th>
+          <th>Class 9</th>
+          <th>Class 10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>3–4 PM (Math)</td>
+          <td>4–5 PM (Science)</td>
+          <td>5–6 PM (Math)</td>
+          <td>6–7 PM (Science)</td>
+          <td>7–8 PM (Math)</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>3–4 PM (Science)</td>
+          <td>4–5 PM (Math)</td>
+          <td>5–6 PM (Science)</td>
+          <td>6–7 PM (Math)</td>
+          <td>7–8 PM (Science)</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>3–4 PM (Math)</td>
+          <td>4–5 PM (Science)</td>
+          <td>5–6 PM (Math)</td>
+          <td>6–7 PM (Science)</td>
+          <td>7–8 PM (Math)</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>3–4 PM (Science)</td>
+          <td>4–5 PM (Math)</td>
+          <td>5–6 PM (Science)</td>
+          <td>6–7 PM (Math)</td>
+          <td>7–8 PM (Science)</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>3–4 PM (Math)</td>
+          <td>4–5 PM (Science)</td>
+          <td>5–6 PM (Math)</td>
+          <td>6–7 PM (Science)</td>
+          <td>7–8 PM (Math)</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td colspan="5">Doubt Clearing & Revision (3–6 PM)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align:center; margin: 2rem 0;">
+  <a href="index1.html" style="padding: 0.8rem 1.5rem; background-color: #25D366; color: white; text-decoration: none; font-size: 1.1rem; border-radius: 8px;">
+    📝 Admission & Payment
+  </a>
+</div>
+
+  
+
+  <footer>
+    <p>&copy; 2025 Bright Minds Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('receiptForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const receiptNo = 'BMA-' + Math.floor(Math.random() * 10000);
+      const output = `
+        <h2>Fee Receipt</h2>
+        <p><strong>Receipt No:</strong> ${receiptNo}</p>
+        <p><strong>Date:</strong> ${form.date.value}</p>
+        <hr>
+        <p><strong>Student Name:</strong> ${form.student.value}</p>
+        <p><strong>Class:</strong> ${form.class.value}</p>
+        <p><strong>Subjects:</strong> ${form.subjects.value}</p>
+        <p><strong>Month(s):</strong> ${form.months.value}</p>
+        <p><strong>Amount Paid:</strong> ₹${form.amount.value}</p>
+        <p><strong>Payment Mode:</strong> ${form.mode.value}</p>
+        <br>
+        <p><strong>Received By:</strong> Admin</p>
+        <p>Signature:</p>
+      `;
+      document.getElementById('output').innerHTML = output;
+      document.getElementById('output').style.display = 'block';
+      document.getElementById('printBtn').style.display = 'block';
+    });
+  </script>
+  <div id="whatsapp-float">
+  <a href="https://wa.me/919598781490?text=Hello%20Bright%20Minds%20Academy%2C%20I%20want%20to%20inquire%20about%20your%20classes." 
+     target="_blank" 
+     title="Chat with us on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+     alt="WhatsApp" style="width: 60%; margin-top: 8px;">
+  </a>
+</div>
+
+</body>
+</html>
