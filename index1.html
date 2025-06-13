@@ -135,23 +135,30 @@
 
 <script>
   function payViaUPI() {
-  const amount = document.getElementById("amount").value.trim();
-  if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
-    alert("Please enter a valid amount.");
-    return;
-  }
+    const amount = document.getElementById("amount").value.trim();
+    if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+      alert("Please enter a valid amount.");
+      return;
+    }
 
-  const upiID = "nikhiljaiswal595-1@ybl";
+    const upiID = "nikhiljaiswal575-1@oksbi";
     const payeeName = "Nikhil Jaiswal";
-    const upiUrl = upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR;
-  // Show confirmation message
-  document.getElementById("confirmation").style.display = "block";
 
-  // Redirect to UPI app
-  window.location.href = upiUrl;
-}
+    const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
 
+    // Create a temporary anchor element to open UPI link on mobile
+    const a = document.createElement('a');
+    a.href = upiUrl;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 </script>
+<p style="margin-top: 1rem;">
+  Or <a id="upiLink" href="#" style="color: #003366; text-decoration: underline;">click here to pay via UPI</a>
+</p>
+
 
 
 
