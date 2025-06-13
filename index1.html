@@ -141,10 +141,9 @@
     return;
   }
 
-  const upiID = "nikhiljaiswal595-1@ybl"; // corrected ID
-  const payeeName = "Nikhil Jaiswal";
-  const upiUrl = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
-
+  const upiID = "nikhiljaiswal595-1@ybl";
+    const payeeName = "Nikhil Jaiswal";
+    const upiUrl = upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR;
   // Show confirmation message
   document.getElementById("confirmation").style.display = "block";
 
